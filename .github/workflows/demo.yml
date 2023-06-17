@@ -32,4 +32,4 @@ jobs:
         cd TestRun 
         ls
     - name: Build with Maven
-      run: mvn clean test
+      run: mvn -f TestRun/pom.xml clean test
