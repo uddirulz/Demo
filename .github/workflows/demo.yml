@@ -36,4 +36,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: target/jtl  # or path/to/artifact
+        path: jtl  # or path/to/artifact
