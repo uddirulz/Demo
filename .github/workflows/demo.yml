@@ -32,6 +32,7 @@ jobs:
         cd TestRun 
         ls
         set JAVA_OPTS="-Xms128m -Xmx256m"
+        java -XshowSettings:vm
     - name: Build with Maven
       run: |
         mvn -f TestRun/pom.xml clean test
