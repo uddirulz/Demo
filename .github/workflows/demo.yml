@@ -32,4 +32,8 @@ jobs:
         cd TestRun 
         ls
     - name: Build with Maven
-      run: mvn -f TestRun/pom.xml clean test
+      run: mvn -f TestRun/pom.xml test
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: target/jtl  # or path/to/artifact
