@@ -29,12 +29,11 @@ jobs:
         cache: maven
     - name: CD Into folder
       run: |
-        cd TestRun 
-        java -XshowSettings:vm
+        cd TestRun
         export _JAVA_OPTS="-Xms1024m -Xmx2048m"
     - name: Build with Maven
       run: |
-        mvn -f TestRun/pom.xml clean test
+        mvn -f TestRun/pom.xml clean test DargLine="-Xmx1524m"
         ls
     - uses: actions/upload-artifact@v3
       with:
