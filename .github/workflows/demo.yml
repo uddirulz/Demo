@@ -32,7 +32,9 @@ jobs:
         cd TestRun 
         ls
     - name: Build with Maven
-      run: mvn -f TestRun/pom.xml test
+      run: |
+        mvn -f TestRun/pom.xml clean test
+        ls
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
