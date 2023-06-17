@@ -13,7 +13,7 @@ public class TestRun {
 									.children(responseAssertion("Welcome")))
 						.generateParentSample(true)
 						),
-				jtlWriter("jtl")
+				jtlWriter("path/to/artifact/")
 				).run();
 	}
 
