@@ -14,7 +14,7 @@ public class TestRun {
 						.generateParentSample(true)
 						),
 				jtlWriter("jtl")
-				).showInGui();
+				).run();
 	}
 
 }
