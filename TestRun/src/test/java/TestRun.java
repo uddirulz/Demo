@@ -13,8 +13,8 @@ public class TestRun {
 									.children(responseAssertion("Welcome")))
 						.generateParentSample(true)
 						),
-				jtlWriter("target/jtl")
-				).run();
+				jtlWriter("jtl")
+				).showInGui();
 	}
 
 }
