@@ -7,7 +7,7 @@ jobs:
   container-test-job:
    runs-on: ubuntu-latest
    container:
-    image: uddirlz/clockbox:latest
+    image: uddirulz/clockbox:latest
     credentials:
      username: ${{ secrets.DOCKERHUB_USERNAME }}
      password: ${{ secrets.DOCKERHUB_TOKEN }}
