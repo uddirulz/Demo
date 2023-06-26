@@ -6,7 +6,8 @@ RUN apk  add --update && \
     update-ca-certificates
 
 # Install PIP and Boto3 and AWS CLI
-RUN apk add py3-pip
+RUN pip install --upgrade pip
+RUN echo pip --version
 RUN pip3 install boto3
 RUN pip3 install awscli==1.27.160
 
@@ -17,7 +18,7 @@ ENV PATH "$PATH:$JMETER_BIN"
 
 # Downloading JMeter
  RUN apk --no-cache add nss && \
-     apk add --update openjdk18-jre curl unzip && \
+     apk add --update openjdk12-jre curl unzip && \
      curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
      tar -zxf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
      mkdir -p /opt/apache && \
