@@ -6,7 +6,7 @@ RUN apk  add --update && \
     update-ca-certificates
 
 # Install PIP and Boto3 and AWS CLI
-RUN pip install --upgrade pip
+RUN apk add py3-pip
 RUN echo pip --version
 RUN pip3 install boto3
 RUN pip3 install awscli==1.27.160
