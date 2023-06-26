@@ -1,5 +1,3 @@
-ockerfile
-@@ -0,0 +1,30 @@
 FROM alpine:latest
 
 RUN apk  add --update && \
