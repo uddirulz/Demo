@@ -1,9 +1,9 @@
-FROM amazoncorretto:latest
+FROM alpine:latest
 
-# RUN apk  add --update && \
-#    apk  upgrade && \
-#    apk add ca-certificates && \
-#    update-ca-certificates
+RUN apk  add --update && \
+    apk  upgrade && \
+    apk add ca-certificates && \
+    update-ca-certificates
 
 # Install PIP and Boto3 and AWS CLI
 # RUN apk add py3-pip
@@ -16,14 +16,14 @@ ENV JMETER_BIN "${JMETER_HOME}/bin"
 ENV PATH "$PATH:$JMETER_BIN"
 
 # Downloading JMeter
-# RUN apk --no-cache add nss && \
-#    apk add --update openjdk8-jre curl unzip && \
-RUN curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
-    tar -zxf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
-    mkdir -p /opt/apache && \
-    mv apache-jmeter-${JMETER_VERSION} /opt/apache && \
-    rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
-    rm -rf /var/cache/apk/*
+ RUN apk --no-cache add nss && \
+     apk add --update openjdk11-jre curl unzip && \
+     curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
+     tar -zxf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
+     mkdir -p /opt/apache && \
+     mv apache-jmeter-${JMETER_VERSION} /opt/apache && \
+     rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
+     rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
 
