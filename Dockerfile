@@ -37,7 +37,9 @@ ENV PATH $PATH:$JMETER_BIN
 
 # Entrypoint has same signature as "jmeter" command
 
-WORKDIR	${JMETER_HOME}
+# WORKDIR	${JMETER_HOME}
+
+COPY entrypoint.sh /entrypoint.sh
 
 #RUN apt-get -y update && apt-get -y install awscli
 RUN chmod +x /entrypoint.sh 
