@@ -16,9 +16,9 @@ ENV JMETER_BIN "${JMETER_HOME}/bin"
 ENV PATH "$PATH:$JMETER_BIN"
 
 # Downloading JMeter
-RUN apk --no-cache add nss && \
-    apk add --update openjdk8-jre curl unzip && \
-    curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
+# RUN apk --no-cache add nss && \
+#    apk add --update openjdk8-jre curl unzip && \
+RUN curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     tar -zxf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     mkdir -p /opt/apache && \
     mv apache-jmeter-${JMETER_VERSION} /opt/apache && \
