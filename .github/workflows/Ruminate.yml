@@ -13,4 +13,4 @@ jobs:
      password: ${{ secrets.DOCKERHUB_TOKEN }}
    steps:
    - name: Print something
-     run: echo "Testing flake8 job"
+     run: python 2+2
