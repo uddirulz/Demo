@@ -7,9 +7,9 @@ RUN apk  add --update && \
 
 # Install PIP and Boto3 and AWS CLI
 RUN apk add py3-pip
-RUN pip --version
+# RUN pip --version
+RUN pip3 install awscli --upgrade
 RUN pip3 install boto3
-RUN pip3 install awscli==1.23.12
 
 ENV JMETER_VERSION "5.6"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
