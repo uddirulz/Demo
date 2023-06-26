@@ -1,9 +1,9 @@
 FROM amazoncorretto:latest
 
-RUN apk  add --update && \
-    apk  upgrade && \
-    apk add ca-certificates && \
-    update-ca-certificates
+# RUN apk  add --update && \
+#    apk  upgrade && \
+#    apk add ca-certificates && \
+#    update-ca-certificates
 
 # Install PIP and Boto3 and AWS CLI
 # RUN apk add py3-pip
