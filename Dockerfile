@@ -6,11 +6,11 @@ RUN apk  add --update && \
     update-ca-certificates
 
 # Install PIP and Boto3 and AWS CLI
-# RUN apk add py3-pip
-# RUN pip3 install boto3
-# RUN pip3 install awscli==1.27.160
+RUN apk add py3-pip
+RUN pip3 install boto3
+RUN pip3 install awscli==1.27.160
 
-ENV JMETER_VERSION "5.6"
+ENV JMETER_VERSION "5.5"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
 ENV JMETER_BIN "${JMETER_HOME}/bin"
 ENV PATH "$PATH:$JMETER_BIN"
