@@ -17,4 +17,7 @@ jobs:
       jmeter --version
       ls
       pwd
+   - name: Checkout
+     uses: actions/checkout@v3
+   - run: ls
      
