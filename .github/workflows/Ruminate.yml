@@ -24,6 +24,9 @@ jobs:
            ls
            printenv
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx
-   
+     run: jmeter.sh -n -t Dummy.jmx -l res.csv
+   - uses: actions/upload-artifact@v3
+     with:
+      name: my-artifact
+      path: ${pwd}  # or path/to/artifact
      
