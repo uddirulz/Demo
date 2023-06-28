@@ -19,13 +19,15 @@ jobs:
       pwd
    - name: Checkout
      uses: actions/checkout@v3
-   - run: ls
+   - run: |
+           ls
+           pwd
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx -l result.jtl
+     run: jmeter.sh -n -t Dummy.jmx -l TestRun/result.jtl
 
    - uses: actions/upload-artifact@v3
      with:
       name: my-artifact
-      path: result.jtl
+      path: TestRun/result.jtl
    
      
