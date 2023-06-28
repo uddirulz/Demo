@@ -13,4 +13,7 @@ jobs:
      password: ${{ secrets.DOCKERHUB_TOKEN }}
    steps:
    - name: Print something
-     run: jmeter --version
+     run: |
+      jmeter --version
+      ls
+     
