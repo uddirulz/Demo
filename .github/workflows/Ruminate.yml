@@ -21,7 +21,7 @@ jobs:
      uses: actions/checkout@v3
    - run: ls
    - name: Run JMTR Test
-     run: jmeter -n -t Dummy.jmx -l "Result.csv"
+     run: jmeter -n -t Dummy.jmx -l "path/to/artifact/Result.csv"
 
    - uses: actions/upload-artifact@v3
      with:
