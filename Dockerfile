@@ -26,6 +26,8 @@ ENV PATH "$PATH:$JMETER_BIN"
      rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
      rm -rf /var/cache/apk/*
 
+WORKDIR ${JMETER_HOME}
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
