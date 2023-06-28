@@ -16,4 +16,5 @@ jobs:
      run: |
       jmeter --version
       ls
+      pwd
      
