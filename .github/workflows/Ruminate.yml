@@ -20,4 +20,11 @@ jobs:
    - name: Checkout
      uses: actions/checkout@v3
    - run: ls
+   - name: Run JMTR Test
+     run: jmeter -n -t Dummy.jmx -l Result.csv
+
+   - uses: actions/upload-artifact@v3
+     with:
+      name: my-artifact
+   
      
