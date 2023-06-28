@@ -21,7 +21,7 @@ jobs:
      uses: actions/checkout@v3
    - run: |
            ls
-           pwd
+           printenv
    - name: Run JMTR Test
      run: jmeter.sh -n -t Dummy.jmx -l TestRun/result.jtl
 
