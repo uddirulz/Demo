@@ -26,9 +26,12 @@ jobs:
    - name: Run JMTR Test
      run: jmeter.sh -n -t Dummy.jmx -l res.csv
    - name: Parse Junit XML
-     run: python JunitParser.py
+     id: junit_parser
+     run: |
+      python JunitParser.py
+      grep -io "failure message" Test-Performance.xml | wc -l >> $GITHUB_OUTPUT
    - name: Validate JUNIT
-     if: contains(grep -i "[\w\s<?]*failure message=[\w\s<>?]*" Test-Performance.xml, "Failure Message:")
+     if: ${{steps.junit_parser.outputs.*}} > 0
      run: exit 1
    - uses: actions/upload-artifact@v3
      with:
