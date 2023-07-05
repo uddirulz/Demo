@@ -25,15 +25,15 @@ print()
 
 # Get details of each testcase
 for testcase in root.findall("testcase"):
-    classname = testcase.attrib["classname"]
-    name = testcase.attrib["name"]
-    failure = testcase.find("failure")
+  classname = testcase.attrib["classname"]
+  name = testcase.attrib["name"]
+  failure = testcase.find("failure")
 
-    print(f"Testcase Classname: {classname}")
-    print(f"Testcase Name: {name}")
+  print(f"Testcase Classname: {classname}")
+  print(f"Testcase Name: {name}")
 
-    if failure is not None:
-        failure_message = failure.text.strip()
-        print(f"Failure Message: {failure_message}")
+  if failure is not None:
+    failure_message = failure.text.strip()
+    print(f"Failure Message: {failure_message}")
 
-    print()
+  print()
