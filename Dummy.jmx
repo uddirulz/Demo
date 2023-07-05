@@ -29,6 +29,18 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
+      <nz.co.breakpoint.jmeter.JUnitReporter guiclass="TestBeanGUI" testclass="nz.co.breakpoint.jmeter.JUnitReporter" testname="JUnit Reporter">
+        <stringProp name="filename">Test-Performance.xml</stringProp>
+        <collectionProp name="kpis">
+          <elementProp name="Response Time should be more than 1000ms" elementType="nz.co.breakpoint.jmeter.KPI" testname="Response Time should be more than 1000ms">
+            <stringProp name="metric">AVERAGE</stringProp>
+            <stringProp name="label">.*</stringProp>
+            <stringProp name="comparator">&gt;=</stringProp>
+            <stringProp name="threshold">1000</stringProp>
+          </elementProp>
+        </collectionProp>
+      </nz.co.breakpoint.jmeter.JUnitReporter>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
