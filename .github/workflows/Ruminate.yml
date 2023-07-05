@@ -29,7 +29,7 @@ jobs:
      run: python JunitParser.py
    - name: Junit
      id: junit_parser
-     run: echo $(grep -io "failure message" Test-Performance.xml | wc -l) >> "$GITHUB_OUTPUT"
+     run: echo "count=$(grep -io "failure message" Test-Performance.xml | wc -l)" >> "$GITHUB_OUTPUT"
    - name: Validate JUNIT
      if: ${{steps.junit_parser.outputs.*}} > 0
      run: exit 1
