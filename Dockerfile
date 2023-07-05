@@ -1,4 +1,5 @@
 FROM alpine:3.18.2
+
 RUN apk --no-cache add ca-certificates==20230506-r0 && \   
     rm -rf /var/cache/apk/*
     
@@ -10,7 +11,9 @@ apk --no-cache add py3-pip==23.1.2-r0 && \   
     
 ENV JMETER_VERSION "5.6"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
-ENV JMETER_BIN "${JMETER_HOME}/bin"ENV PATH "$PATH:$JMETER_BIN"
+ENV JMETER_BIN "${JMETER_HOME}/bin"
+ENV PATH "$PATH:$JMETER_BIN"
+
 # Downloading JMeter
 RUN apk --no-cache add nss==3.91-r0 && \     
     apk --no-cache add openjdk17-jre==17.0.7_p7-r1 curl==8.1.2-r0 unzip==6.0-r14 && \    
@@ -27,5 +30,7 @@ RUN apk --no-cache add nss==3.91-r0 && \     
     rm /tmp/datadog-backend-listener.zip && \    
     rm /tmp/junit-reporter.zip && \     
     rm -rf /var/cache/apk/*
+    
 WORKDIR ${JMETER_HOME}
+
 ENTRYPOINT ["sh"]
