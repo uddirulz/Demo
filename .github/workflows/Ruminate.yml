@@ -28,5 +28,5 @@ jobs:
    - uses: actions/upload-artifact@v3
      with:
       name: my-artifact
-      path: res.csv  # or path/to/artifact
+      path: /
      
