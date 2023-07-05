@@ -27,7 +27,7 @@ jobs:
      run: jmeter.sh -n -t Dummy.jmx -l res.csv
    - name: Parse Junit XML
      id: junit_parser
-     run: python JunitParser.py >> "$GITHUB_OUTPUT"
+     run: python JunitParser.py >> $GITHUB_OUTPUT
    - name: Validate JUNIT
      if: contains(${{steps.junit_parser.outputs.*}}, "Failure Message:")
      run: exit 1
