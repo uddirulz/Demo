@@ -26,7 +26,11 @@ jobs:
    - name: Run JMTR Test
      run: jmeter.sh -n -t Dummy.jmx -l res.csv
    - name: Parse Junit XML
-     run: python JunitParser.py
+     id: junit_parser
+     run: python JunitParser.py >> "$GITHUB_OUTPUT"
+   - name: Validate JUNIT
+     if: contains(${{steps.junit_parser.outputs.*}}, "Failure Message:")
+     run: exit 1
    - uses: actions/upload-artifact@v3
      with:
       name: my-artifact
