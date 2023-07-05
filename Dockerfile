@@ -27,7 +27,7 @@ RUN apk --no-cache add nss==3.91-r0 && \
     unzip -o /tmp/junit-reporter.zip -d ${JMETER_HOME} && \
     rm ${JMETER_HOME}/lib/ext/jmeter-plugins-manager-*.jar && \
     rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
-    rm /tmp/datadog-backend-listener.zip && \ 
+    rm /tmp/datadog-backend-listener.zip && \
     rm /tmp/junit-reporter.zip && \
     rm -rf /var/cache/apk/*
     
