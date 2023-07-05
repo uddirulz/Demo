@@ -25,6 +25,8 @@ jobs:
            printenv
    - name: Run JMTR Test
      run: jmeter.sh -n -t Dummy.jmx -l res.csv
+   - name: Parse Junit XML
+     run: python JunitParser.py
    - uses: actions/upload-artifact@v3
      with:
       name: my-artifact
