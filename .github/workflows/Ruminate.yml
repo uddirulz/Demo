@@ -13,18 +13,20 @@ jobs:
      password: ${{ secrets.DOCKERHUB_TOKEN }}
    steps:
    - name: Print something
+     id: setup
      run: |
       jmeter --version
       cd ${JMETER_HOME}
       ls
       pwd
+      echo "date1=$(date +"%Y-%m-%d")" >> $GITHUB_OUTPUT
    - name: Checkout
      uses: actions/checkout@v3
    - run: |
            ls
            printenv
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx -l res.csv
+     run: jmeter.sh -n -t Dummy.jmx -l "${{steps.setup.outputs.date1}}_res.csv"
    - name: Parse Junit XML
      run: python JunitParser.py
    - name: Junit
