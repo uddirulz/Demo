@@ -8,7 +8,7 @@ jobs:
    runs-on: ubuntu-latest
    container:
     image: uddirulz/clockbox:latest
-    options: --name jmeter_cont
+    options: --name=jmeter_cont
     credentials:
      username: ${{ secrets.DOCKERHUB_USERNAME }}
      password: ${{ secrets.DOCKERHUB_TOKEN }}
