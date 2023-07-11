@@ -38,10 +38,10 @@
             <stringProp name="comparator">&lt;=</stringProp>
             <stringProp name="threshold">1000</stringProp>
           </elementProp>
-          <elementProp name="Total Errors should not be more than 1%" elementType="nz.co.breakpoint.jmeter.KPI" testname="Total Errors should not be more than 1%">
+          <elementProp name="Total Errors should be more than 1%" elementType="nz.co.breakpoint.jmeter.KPI" testname="Total Errors should not be more than 1%">
             <stringProp name="metric">ERRORS</stringProp>
             <stringProp name="label">.*</stringProp>
-            <stringProp name="comparator">&lt;=</stringProp>
+            <stringProp name="comparator">&gt;=</stringProp>
             <stringProp name="threshold">0.01</stringProp>
           </elementProp>
         </collectionProp>
