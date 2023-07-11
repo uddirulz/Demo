@@ -35,7 +35,7 @@ jobs:
      id: junit_parser
      run: echo "count=$(grep -io "failure message" Test-Performance.xml | wc -l)" >> "$GITHUB_OUTPUT"
    - name: Validate JUNIT
-     if: ${{steps.junit_parser.outputs.count}} > 0
+     if: ${{steps.junit_parser.outputs.*}} > 0
      run: exit 1
    - uses: actions/upload-artifact@v3
      with:
