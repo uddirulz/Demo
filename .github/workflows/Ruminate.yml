@@ -38,7 +38,7 @@ jobs:
    - run: echo ${{steps.junit_parser.outputs.count}}
      
    - name: Validate JUNIT
-     if: ${{ fromJSON(steps.junit_parser.outputs.count) }} != 0
+     if: ${{ fromJSON(steps.junit_parser.outputs.count) != fromJSON(0) }}
      run: exit 1
    - uses: actions/upload-artifact@v3
      if: always()
