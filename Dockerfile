@@ -8,8 +8,8 @@ RUN apk --no-cache add py3-pip==23.1.2-r0 && \
     rm -rf /var/cache/apk/* && \
     pip3 install --no-cache-dir awscli==1.27.163 && \
     pip3 install --no-cache-dir boto3==1.26.163 && \
-    pip3 install --no-cache-dir pandas==2.0.3 && \
-    pip3 install --no-cache-dir openpyxml==3.1.2
+    pip3 install --no-cache-dir pandas && \
+    pip3 install --no-cache-dir openpyxml
     
 ENV JMETER_VERSION "5.6"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
