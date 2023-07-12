@@ -37,9 +37,11 @@ jobs:
      
    - run: echo ${{steps.junit_parser.outputs.count}}
    
-   - run: pip install pandas
+   - run: |
+      chmod +x pip3
+      pip3 install pandas
    
-   - run: pip install openpyxml
+   - run: pip3 install openpyxml
    
    - run: python csvImport.py
      
