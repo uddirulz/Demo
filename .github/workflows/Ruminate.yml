@@ -28,7 +28,7 @@ jobs:
            ls
            printenv
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx -l res.csv"
+     run: jmeter.sh -n -t Dummy.jmx -l res.csv
    - name: Parse Junit XML
      run: python JunitParser.py
    - name: Junit
