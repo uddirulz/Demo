@@ -38,8 +38,8 @@ jobs:
    - run: echo ${{steps.junit_parser.outputs.count}}
    
    - run: |
-      chmod +x pip
-      pip install pandas
+      apk add --no-cache py-pandas
+      pip show pandas
    
    - run: pip install openpyxml
    
