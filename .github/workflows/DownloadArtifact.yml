@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Download Artifact
         run: |
-          gh run download 5536589196 --artifact res.csv
+          gh run download 5536589196 -n res.csv
           vi res.csv
