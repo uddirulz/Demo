@@ -3,6 +3,9 @@ name: download artifact
 on:
  workflow_dispatch
  
+env:
+ GH_TOKEN: ${{ secrets.GH_TOKEN }}
+ 
 jobs:
   download:
     runs-on: ubuntu-latest
