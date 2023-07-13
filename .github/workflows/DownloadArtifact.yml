@@ -15,6 +15,5 @@ jobs:
       - name: Download Artifact
         run: |
           ls
-          gh run download 5536589196 -n my-artifact.zip
+          gh run download https://github.com/uddirulz/TestRun/actions/runs/5536589196 -n my-artifact.zip
           ls
-          vi res.csv
