@@ -1,0 +1,13 @@
+name: download artifact
+
+on:
+ workflow_dispatch
+ 
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        run: |
+          gh run download 5536589196 --artifact res.csv
+          vi res.csv
