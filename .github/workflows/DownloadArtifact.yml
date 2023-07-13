@@ -15,6 +15,6 @@ jobs:
       - name: Download Artifact
         run: |
           ls
-          gh run download 5536589196 -n res.csv
+          gh run download 5536589196 -n my-artifact.zip
           ls
           vi res.csv
