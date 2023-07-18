@@ -27,7 +27,7 @@ jobs:
    - run: |
            ls
            printenv
-           echo $GITHUB_RUN_NUMBE
+           echo ${GITHUB_RUN_NUMBE}
    - name: Run JMTR Test
      run: jmeter.sh -n -t Dummy.jmx -l res.csv
    - name: Parse Junit XML
