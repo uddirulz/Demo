@@ -6,6 +6,9 @@ on:
 jobs:
   container-test-job:
    runs-on: ubuntu-latest
+   strategy:
+    matrix:
+     version: [1, 2]
    container:
     image: uddirulz/clockbox:latest
     options: --name=jmeter_cont
@@ -14,7 +17,7 @@ jobs:
      password: ${{ secrets.DOCKERHUB_TOKEN }}
      
    steps:
-   - name: Print something
+   - name: Print something {{matrix.version}}
      id: setup
      run: |
       jmeter --version
