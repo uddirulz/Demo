@@ -17,7 +17,7 @@ jobs:
      password: ${{ secrets.DOCKERHUB_TOKEN }}
      
    steps:
-   - name: Print something {{matrix.version}}
+   - name: Print something ${{matrix.version}}
      id: setup
      run: |
       jmeter --version
@@ -25,6 +25,7 @@ jobs:
       ls
       pwd
       echo "date1=$(date +"%Y-%m-%d")" >> $GITHUB_OUTPUT
+   - run: echo ${{matrix.version}}
    - name: Checkout
      uses: actions/checkout@v3
    - run: |
@@ -32,7 +33,7 @@ jobs:
            printenv
            echo ${GITHUB_RUN_NUMBER}
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx -l "${{ github.run_number }}-{{matrix.version}}-res.csv"
+     run: jmeter.sh -n -t Dummy.jmx -l "${{ github.run_number }}-${{matrix.version}}-res.csv"
    - name: Parse Junit XML
      run: python JunitParser.py
    - name: Junit
@@ -57,7 +58,7 @@ jobs:
      with:
       name: my-artifact
       path: |
-       ${{ github.run_number }}-{{matrix.version}}-res.csv
+       ${{ github.run_number }}-${{matrix.version}}-res.csv
        Test-Performance.xml
        # Report Template.xlsx
        
