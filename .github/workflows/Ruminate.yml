@@ -32,7 +32,7 @@ jobs:
            printenv
            echo ${GITHUB_RUN_NUMBER}
    - name: Run JMTR Test
-     run: jmeter.sh -n -t Dummy.jmx -l "${{ github.run_number }}-res.csv"
+     run: jmeter.sh -n -t Dummy.jmx -l "${{ github.run_number }}-{{matrix.version}}-res.csv"
    - name: Parse Junit XML
      run: python JunitParser.py
    - name: Junit
@@ -57,7 +57,7 @@ jobs:
      with:
       name: my-artifact
       path: |
-       ${{ github.run_number }}-res.csv
+       ${{ github.run_number }}-{{matrix.version}}-res.csv
        Test-Performance.xml
        # Report Template.xlsx
        
