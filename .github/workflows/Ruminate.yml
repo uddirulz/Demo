@@ -22,6 +22,8 @@ jobs:
      run: |
       jmeter --version
       ip route show
+      ifconfig
+      docker inspect jmeter_cont
       cd ${JMETER_HOME}
       ls
       pwd
