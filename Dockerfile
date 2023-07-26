@@ -6,7 +6,8 @@ RUN apk --no-cache add ca-certificates==20230506-r0 && \
 # Install PIP and Boto3 and AWS CLIRUN
 RUN apk --no-cache add py3-pip==23.1.2-r0 && \
     rm -rf /var/cache/apk/* && \
-    pip3 install --no-cache-dir awscli==1.27.163 && \
+    # pip3 install --no-cache-dir awscli==1.27.163 && \
+    apk add aws-cli && \
     pip3 install --no-cache-dir boto3==1.26.163 && \
     
 ENV JMETER_VERSION "5.6"
