@@ -7,8 +7,8 @@ jobs:
   container-test-job:
    runs-on: ubuntu-latest
    container:
-    image: uddirulz/clockbox:latest
-    options: --name=jmeter_cont
+    image: uddirulz/clockbox-slave:latest
+    options: --name=jmeter_contslave
     credentials:
      username: ${{ secrets.DOCKERHUB_USERNAME }}
      password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -18,5 +18,5 @@ jobs:
      id: jm
      run: |
       echo "HostIP=$(ip addr show | grep 'eth0' | awk '/inet / {split($2, ip_parts, "/"); print ip_parts[1]}')" >> $GITHUB_OUTPUT
-      jmeter-server -Dserver.rmi.localport=50000 -Dserver_port=1099 -Dserver.rmi.ssl.disable=true
+      # jmeter-server -Dserver.rmi.localport=50000 -Dserver_port=1099 -Dserver.rmi.ssl.disable=true
      
