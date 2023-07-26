@@ -35,4 +35,8 @@ RUN apk --no-cache add nss==3.91-r0 && \
     
 WORKDIR ${JMETER_HOME}
 
-ENTRYPOINT ["sh"]
+COPY ./entrypoint.sh /
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
