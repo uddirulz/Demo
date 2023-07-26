@@ -21,6 +21,7 @@ jobs:
      id: setup
      run: |
       jmeter --version
+      ip route show
       cd ${JMETER_HOME}
       ls
       pwd
