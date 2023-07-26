@@ -7,7 +7,9 @@ jobs:
   container-test-job:
    runs-on: ubuntu-latest
    container:
-    image: uddirulz/clockbox-slave:latest
+    image: uddirulz/clockbox:latest
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
     options: --name=jmeter_contslave
     credentials:
      username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -17,6 +19,7 @@ jobs:
    - name: Run jmeter slave
      id: jm
      run: |
+      jmeter --version
       echo "HostIP=$(ip addr show | grep 'eth0' | awk '/inet / {split($2, ip_parts, "/"); print ip_parts[1]}')" >> $GITHUB_OUTPUT
       # jmeter-server -Dserver.rmi.localport=50000 -Dserver_port=1099 -Dserver.rmi.ssl.disable=true
      
