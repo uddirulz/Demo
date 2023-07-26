@@ -23,6 +23,7 @@ jobs:
       jmeter --version
       ip route show
       ifconfig
+      ip addr show
       docker inspect jmeter_cont
       cd ${JMETER_HOME}
       ls
