@@ -16,7 +16,7 @@ ENV PATH "$PATH:$JMETER_BIN"
 
 # Downloading JMeter 
 RUN apk --no-cache add nss==3.91-r0 && \
-    apk --no-cache add openjdk17-jre==17.0.7_p7-r1 curl==8.1.2-r0 unzip==6.0-r14 && \
+    apk --no-cache add openjdk17-jre==17.0.7_p7-r1 curl==8.2.1-r0 unzip==6.0-r14 && \
     curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     curl -L https://jmeter-plugins.org/files/packages/jmeter-datadog-backend-listener-0.3.1.zip --output /tmp/datadog-backend-listener.zip && \
     curl -L https://jmeter-plugins.org/files/packages/tilln-junit-1.1.zip --output /tmp/junit-reporter.zip && \
