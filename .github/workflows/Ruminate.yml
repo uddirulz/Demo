@@ -21,11 +21,6 @@ jobs:
      id: setup
      run: |
       jmeter --version
-      ip route show
-      ifconfig
-      ip addr show
-      docker inspect jmeter_cont
-      cd ${JMETER_HOME}
       ls
       pwd
       echo "date1=$(date +"%Y-%m-%d")" >> $GITHUB_OUTPUT
