@@ -21,5 +21,5 @@ jobs:
      run: |
       jmeter --version
       echo "HostIP=$(ip addr show | grep 'eth0' | awk '/inet / {split($2, ip_parts, "/"); print ip_parts[1]}')" >> $GITHUB_OUTPUT
-      # jmeter-server -Dserver.rmi.localport=50000 -Dserver_port=1099 -Dserver.rmi.ssl.disable=true
+      jmeter-server -Dserver.rmi.localport=50000 -Dserver_port=1099 -Dserver.rmi.ssl.disable=true
      
