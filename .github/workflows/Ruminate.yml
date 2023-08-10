@@ -9,9 +9,7 @@ jobs:
    steps:
    - name: Create Matrix
      run: |
-      shell: sh
-      sequence = $(seq 1 2) && \
-      formatted_sequence = "[$(echo $sequence | tr -d ' ')]" && \
+      formatted_sequence = "[$(echo $(seq 1 3) | sed 's/ /, /g')]" && \
       echo $formatted_sequence
       
      
