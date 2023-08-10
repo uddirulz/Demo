@@ -1,9 +1,19 @@
 name: pull
 
 on:
- workflow_dispatch
- 
+ workflow_dispatch  
+  
 jobs:
+  matrix-setup:
+   runs-on: ubuntu-latest
+   steps:
+   - name: Create Matrix
+     run: |
+      sequence = $(seq 1 2)
+      formatted_sequence = "[$(echo $sequence | tr -d ' ')]"
+      echo $formatted_sequence
+      
+     
   container-test-job:
    runs-on: ubuntu-latest
    strategy:
