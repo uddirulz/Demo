@@ -9,6 +9,7 @@ jobs:
    steps:
    - name: Create Matrix
      run: |
+      shell: sh
       sequence = $(seq 1 2)
       formatted_sequence = "[$(echo $sequence | tr -d ' ')]"
       echo $formatted_sequence
